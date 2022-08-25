@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+$dark-blue: #35869A;
+$blue: #42A8C0;
+$gray: #AECAC7;
+$gray-blue: #B3DCE6;
+$green-dark: #2D7788;
+$gray-dark: #545E84;
+$gray-light: #97BDDE;
+$blue-light: #7BC2D3;
+$dark-white: #F5F5F5;
+
+body {
+    width: 100%;
+    min-height: 1700px;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    background-color: $dark-white;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    background-color: white;
+    box-shadow: -1px 1px 3px rgb(221, 221, 221);
+    align-items: stretch;
+
+    &__body {
+        max-width: 960px;
+        margin: auto;
+        margin-top: 30px;
+        margin-bottom: 50px;
+        min-width: 250px;
+    }
+}
+
+.plug {
+    min-width: 250px;
+}
+
+.footer {
+    display: flex;
+
+    &__body {
+        margin: auto;
+        display: inline-block;
+        margin-bottom: 50px;
+        text-align: center;
+        min-width: 250px;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    max-width: 75%;
+    min-width: 250px;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    min-width: 250px;
+    background-color: $blue;
+}
+
+%content-padding {
+    padding: 50px 80px 0px 60px;
+}
+
+.career {
+    &__body {
+        @extend %content-padding;
+    }
+
+    &__title {}
+
+    &__text {
+        margin-top: 30px;
+    }
+}
+
+@mixin title__icon($icon-width, $icon-height, $top-pos, $margin-right, $icon-path) {
+    content: '';
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    top: $top-pos;
+    margin-right: $margin-right;
+
+    border-radius: 50%;
+    background-color: $green-dark;
+
+    background: {
+        size: $icon-width $icon-height;
+        image: url($icon-path);
+        repeat: no-repeat;
+        position: 48% 45%;
+    }
+}
+
+.title {
+    color: $green-dark;
+    font-size: 20px;
+    font-weight: 500;
+
+    &--icon-person {
+        &::before {
+            @include title__icon(15px, 15px, 8px, 8px, '/imgs/career/user.png');
+        }
+    }
+
+    &--icon-bag {
+        &::before {
+            @include title__icon(15px, 15px, 8px, 8px, '/imgs/experiences/briefcase.png');
+        }
+    }
+
+    &--icon-box {
+        &::before {
+            @include title__icon(15px, 15px, 8px, 8px, '/imgs/projects/box.png');
+        }
+    }
+
+    &--icon-rocket {
+        &::before {
+            @include title__icon(15px, 15px, 8px, 8px, '/imgs/skills/rocket.png');
+        }
+    }
+
+    &--aside {
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+    }
+}
+
+.text {
+    color: $gray-dark;
+    font-size: 15px;
+    line-height: 20px;
+
+    &--small {
+        font-size: 14px;
+    }
+}
+
+.experiences {
+    &__body {
+        @extend %content-padding;
+    }
+
+    &__title {}
+
+    &__item {
+        margin-top: 20px;
+
+        &:nth-child(2) {
+            margin-top: 30px;
+        }
+    }
+
+    &__item-title {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item-title-info {}
+
+    &__item-title-date {
+        color: $gray-light;
+        font-size: 15px;
+    }
+
+    &__item-title-info-position {
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    &__item-title-info-location {
+        margin-top: 5px;
+        color: $gray-light;
+        font-size: 15px;
+    }
+
+    &__text {
+        margin-top: 10px;
+    }
+}
+
+.projects {
+    &__body {
+        @extend %content-padding;
+    }
+
+    &__text {
+        margin-top: 30px;
+    }
+
+    &__term {
+        margin-top: 20px;
+    }
+
+    &__term-name {
+        color: $green-dark;
+        font-size: 16px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.skills {
+    &__body {
+        @extend %content-padding;
+        padding-bottom: 100px;
+    }
+
+    &__item {
+        &:nth-child(2) {
+            margin-top: 30px;
+        }
+
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__item-title {
+        font-weight: 500;
+        font-size: 16px;
+        color: $green-dark;
+    }
+
+    &__item-progressbar {
+        display: flex;
+        width: 70%;
+        position: relative;
+        background-color: $dark-white;
+        min-width: 100px;
+        height: 12px;
+    }
+
+    &__item-progressbar-fill {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 12px;
+        background-color: $blue-light;
+    }
+
+    &__item-progressbar-fill--98-percent {
+        width: 98%;
+    }
+
+    &__item-progressbar-fill--95-percent {
+        width: 95%;
+    }
+
+    &__item-progressbar-fill--90-percent {
+        width: 90%;
+    }
+
+    &__item-progressbar-fill--70-percent {
+        width: 70%;
+    }
+}
+
+.header {
+    background-color: $dark-blue;
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+    }
+
+    &__img {}
+
+    &__name {
+        margin-top: 10px;
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    &__postition {
+        color: $gray;
+        margin-top: 10px;
+        font-size: 18px;
+    }
+}
+
+@mixin contact-info__item-icon($icon-width, $icon-height, $top-pos, $margin-right, $icon-path) {
+    content: '';
+    display: inline-block;
+    position: relative;
+    width: $icon-width;
+    height: $icon-height;
+    top: $top-pos;
+    margin-right: $margin-right;
+
+    background: {
+        size: $icon-width $icon-height;
+        image: url($icon-path);
+        repeat: no-repeat;
+    }
+}
+
+%aside-padding {
+    padding: 32px 0px 32px 27px;
+}
+
+.contact-info {
+    &__body {
+        @extend %aside-padding;
+    }
+
+    &__item {
+        display: block;
+        margin-top: 15px;
+        color: white;
+
+        &:first-child {
+            margin: 0px;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__item--email {
+        &::before {
+            @include contact-info__item-icon(17px, 17px, 4px, 5px, '/imgs/contact-info/email.png');
+        }
+    }
+
+    &__item--phone {
+        &::before {
+            @include contact-info__item-icon(17px, 17px, 4px, 5px, '/imgs/contact-info/phone-call.png');
+        }
+    }
+
+    &__item--site {
+        &::before {
+            @include contact-info__item-icon(17px, 17px, 4px, 5px, '/imgs/contact-info/earth.png');
+        }
+    }
+
+    &__item--linkedin {
+        &::before {
+            @include contact-info__item-icon(17px, 17px, 4px, 5px, '/imgs/contact-info/linkedin.png');
+        }
+    }
+
+    &__item--github {
+        &::before {
+            @include contact-info__item-icon(17px, 17px, 4px, 5px, '/imgs/contact-info/github.png');
+        }
+    }
+
+    &__item--twitter {
+        &::before {
+            @include contact-info__item-icon(17px, 17px, 4px, 5px, '/imgs/contact-info/twitter.png');
+        }
+    }
+}
+
+.education {
+
+    &__body {
+        @extend %aside-padding;
+    }
+
+    &__item {}
+
+    &__title {}
+
+    &__item-name {
+        margin-top: 20px;
+        color: white;
+        font-weight: bold;
+    }
+
+    &__item-location {
+        margin-top: 7px;
+        color: $gray-blue;
+        font-weight: bold;
+    }
+
+    &__item-date {
+        margin-top: 3px;
+        color: $gray-blue;
+        font-weight: bold;
+    }
+}
+
+.languages {
+    &__body {
+        @extend %aside-padding;
+    }
+
+    &__title {}
+
+    &__item {
+        display: flex;
+        margin-top: 15px;
+
+        &:nth-child(2) {
+            margin-top: 20px;
+        }
+    }
+
+    &__item-name {
+        color: white;
+    }
+
+    &__item-level {
+        margin-left: 5px;
+        color: $gray-blue;
+    }
+}
+
+.interests {
+    &__body {
+        @extend %aside-padding;
+    }
+
+    &__name {
+        color: white;
+        margin-top: 15px;
+
+        &:nth-child(2) {
+            margin-top: 20px;
+        }
+    }
+}
+
+$content-padding: 25px;
+
+//adaptation
+
+@media (max-width: 1000px) {
+    .container {
+        margin: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .skills {
+        &__item {
+            flex-direction: column;
+        }
+
+        &__item-progressbar {
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .title {
+        line-height: 25px;
+    }
+
+    .aside {
+        position: relative;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .footer {
+        &__body {
+            margin-bottom: $content-padding;
+        }
+    }
+
+    .career {
+        &__body {
+            padding: $content-padding;
+        }
+    }
+
+    .experiences {
+        &__body {
+            padding: $content-padding;
+        }
+
+        &__item-title {
+            flex-direction: column;
+        }
+
+        &__item-title-date {
+            margin-top: 4px;
+        }
+    }
+
+    .projects {
+        &__body {
+            padding: $content-padding;
+        }
+    }
+
+    .skills {
+        &__body {
+            padding: $content-padding;
+            padding-bottom: 100px;
+        }
+    }
+}
+
+@media (max-width: 290px) {
+    .container {
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    .footer {
+        &__body {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+    }
+}
