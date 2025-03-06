@@ -120,7 +120,7 @@ body {
   border-radius: 50%;
   background-color: #2D7788;
   background-size: 15px 15px;
-  background-image: url("/imgs/experiences/briefcase.png");
+  background-image: url("../imgs/experiences/briefcase.png");
   background-repeat: no-repeat;
   background-position: 48% 45%;
 }
@@ -136,7 +136,7 @@ body {
   border-radius: 50%;
   background-color: #2D7788;
   background-size: 15px 15px;
-  background-image: url("/imgs/projects/box.png");
+  background-image: url("../imgs/projects/box.png");
   background-repeat: no-repeat;
   background-position: 48% 45%;
 }
@@ -152,7 +152,7 @@ body {
   border-radius: 50%;
   background-color: #2D7788;
   background-size: 15px 15px;
-  background-image: url("/imgs/skills/rocket.png");
+  background-image: url("../imgs/skills/rocket.png");
   background-repeat: no-repeat;
   background-position: 48% 45%;
 }
@@ -348,7 +348,7 @@ body {
   top: 4px;
   margin-right: 5px;
   background-size: 17px 17px;
-  background-image: url("/imgs/contact-info/email.png");
+  background-image: url("../imgs/contact-info/email.png");
   background-repeat: no-repeat;
 }
 
@@ -361,7 +361,7 @@ body {
   top: 4px;
   margin-right: 5px;
   background-size: 17px 17px;
-  background-image: url("/imgs/contact-info/phone-call.png");
+  background-image: url("../imgs/contact-info/phone-call.png");
   background-repeat: no-repeat;
 }
 
@@ -374,7 +374,7 @@ body {
   top: 4px;
   margin-right: 5px;
   background-size: 17px 17px;
-  background-image: url("/imgs/contact-info/earth.png");
+  background-image: url("../imgs/contact-info/earth.png");
   background-repeat: no-repeat;
 }
 
@@ -387,7 +387,7 @@ body {
   top: 4px;
   margin-right: 5px;
   background-size: 17px 17px;
-  background-image: url("/imgs/contact-info/linkedin.png");
+  background-image: url("../imgs/contact-info/linkedin.png");
   background-repeat: no-repeat;
 }
 
@@ -400,7 +400,7 @@ body {
   top: 4px;
   margin-right: 5px;
   background-size: 17px 17px;
-  background-image: url("/imgs/contact-info/github.png");
+  background-image: url("../imgs/contact-info/github.png");
   background-repeat: no-repeat;
 }
 
@@ -413,7 +413,7 @@ body {
   top: 4px;
   margin-right: 5px;
   background-size: 17px 17px;
-  background-image: url("/imgs/contact-info/twitter.png");
+  background-image: url("../imgs/contact-info/twitter.png");
   background-repeat: no-repeat;
 }
 
